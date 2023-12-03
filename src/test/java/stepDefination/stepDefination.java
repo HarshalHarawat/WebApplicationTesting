@@ -22,6 +22,9 @@ public class stepDefination
 	@Before(order=0)
 	public void BroswerSetup()
 	{
+		
+		System.out.println("I am inside the Browser setup file");
+		
 		String ProjectPath=System.getProperty("user.dir");
 		System.out.println(ProjectPath);
 		
@@ -34,11 +37,14 @@ public class stepDefination
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
 		
+	
+		
 	}
 	
 	@After
 	public void teardown()
 	{
+		System.out.println("Now i am closing the browser as all the steps are been executed");
 		driver.quit();
 		
 	}
